@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+Return Book
+<form method="POST" class="form">
+        {% csrf_token %}
+        <p>Are you sure you want to Return?</p>
+        <input type="submit" value="Yes">
+        <a href="{% url 'details' %}"><input type="button" value ="No"></a>
+    </form>
+
+{% endblock %}

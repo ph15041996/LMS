@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container bg-light">
+        <h3>WELCOME  {{ user }}</h3>
+    <div class="lead" style="background-color:lightblue;width:40%"> 
+        <ul class="list-unstyled">
+        
+        <li>First Name:-{{ profile.user.first_name  }}</li>
+        <li>Last Name:-{{ profile.user.last_name  }}</li>
+        <li>Username:-{{ profile.user.username  }}</li> 
+        <li>Fee Paid:-{{ profile.fee_paid }}</li>   
+        <li>Date of payment:-{{ profile.paid_date }}</li> 
+        <li>Membership End Date:-{{ profile.member_till }}</li>
+    </ul>
+    </div>
+<div>
+<h4>Book Taken</h4>
+<table class="table">
+    <tr >
+        <th>Book Name</th>
+        <th>Category</th>
+        <th>Author</th>
+        <th>Publisher</th>
+        <th>Issue Date</th>
+        <th>Return Date</th>
+    </tr>
+    {% for book in books%}
+    <tr>
+        <td>{{ book.book_name }}</td>
+        <td style="padding-right:5px;">{{ book.category }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.publication }}</td>
+        <td>{{ book.issue_date }}</td>
+        <td>{{ book.return_date }}</td>
+        <td><a href="{% url 'return' book.id %}">return</a></td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}
+</div>

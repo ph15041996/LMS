@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <title>LMS</title> 
+    </head>
+    
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+            <a href="home.php" class="navbar-brand">HOME</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"  >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a href="rooms.php" class="navbar-item nav-link">Rooms</a>
+                    <a href="prices.php" class="navbar-item nav-link">Price</a>
+                    <a href="login.php" class="navbar-item nav-link active">Login</a>
+                    <a href="register.php" class="navbar-item nav-link">Register</a>
+                </div>
+            </div>
+        </nav> -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" ></nav>
+            <a href="" class="navbar-brand">HOME</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target = "#AllNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="AllNav">
+                <div class="navbar-nav">
+                    <a href="{% url 'allbook' %}" class="navbar-item nav-link">Books</a>
+                    <a href="{% url 'details' %}" class="navbar-item nav-link">Profile</a>
+                    <a href="" class="navbar-item nav-link">Librian</a>
+                    <a href="{% url 'logout' %}" class="navbar-item nav-link" >Log Out</a>
+                </div>
+            </div>
+        </nav> 
+        <body style="margin:5%">
+
+            {% block content %}
+
+            {% endblock %}
+
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+    </body>
+</html>
+

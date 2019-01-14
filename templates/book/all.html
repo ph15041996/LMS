@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h4>Welcome {{ user }}</h4>
+    <div class="card bg-light m-2 p-2">
+        <h5 class="card-title">Friction Books</h5>
+        <div class="card card-body">
+        {% for object in object_list %}
+        {% if object.category == "Fiction" %}
+        {{ object.name }}
+        {{ object.publication }}
+        {% if object.quantity != 0 %}
+        {{ object.author }}<a href="{% url 'issuebook' object.id %}">Select </a><br>
+        {% else %}
+        {{ object.author }}<a>  Book Out of Stock</a><br>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+
+    <div class="card bg-light m-2 p-2">
+        <h5 class="card-title">Literature Books</h5>
+        <div class="card card-body">
+        {% for object in object_list %}
+        {% if object.category == "Literature" %}
+        {{ object.name }}
+        {{ object.publication }}
+        {% if object.quantity != 0 %}
+        {{ object.author }}<a href="{% url 'issuebook' object.id %}">Select </a><br>
+        {% else %}
+        {{ object.author }}<a>  Book Out of Stock</a><br>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        </div>  
+    </div>
+
+    <div class="card bg-light m-2 p-2">
+        <h5 class="card-title">Bussiness Books</h5>
+        <div class="card card-body">
+        {% for object in object_list %}
+        {% if object.category == "Bussiness" %}
+        {{ object.name }}
+        {{ object.publication }}
+        {% if object.quantity != 0 %}
+        {{ object.author }}<a href="{% url 'issuebook' object.id %}">Select </a><br>
+        {% else %}
+        {{ object.author }}<a>  Book Out of Stock</a><br>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="card bg-light m-2 p-2">
+        <h5 class="card-title">Technology Books</h5>
+        <div class="card card-body">
+        {% for object in object_list %}
+        {% if object.category == "Technology" %}
+        {{ object.name }}
+        {{ object.publication }}
+        {% if object.quantity != 0 %}
+        {{ object.author }}<a href="{% url 'issuebook' object.id %}">Select </a><br>
+        {% else %}
+        {{ object.author }}<a>  Book Out of Stock</a><br>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+
+    <div class="card bg-light m-2 p-2">
+        <h5 class="card-title">Adult Books</h5>
+        <div class="card card-body">
+        {% for object in object_list %}
+        {% if object.category == "Adult" %}
+        {{ object.name }}
+        {{ object.publication }}
+        {% if object.quantity != 0 %}
+        {{ object.author }}<a href="{% url 'issuebook' object.id %}">Select </a><br>
+        {% else %}
+        {{ object.author }}<a>  Book Out of Stock</a><br>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+
+    <div class="card bg-light m-2 p-2">
+        <h5 class="card-title">Exam Preparation Books</h5>
+        <div class="card card-body">
+        {% for object in object_list %}
+        {% if object.category == "Exam_Preparation" %}
+        {{ object.name }}
+        {{ object.publication }}
+        {% if object.quantity != 0 %}
+        {{ object.author }}<a href="{% url 'issuebook' object.id %}">Select </a><br>
+        {% else %}
+        {{ object.author }}<a>  Book Out of Stock</a><br>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+
+    <div class="card bg-light m-2 p-2">
+        <h5 class="card-title">Bed Time Story Books</h5>
+        <div class="card card-body">
+        {% for object in object_list %}
+        {% if object.category == "Bed_Time" %}
+        {{ object.name }}
+        {{ object.publication }}
+        {% if object.quantity != 0 %}
+        {{ object.author }}<a href="{% url 'issuebook' object.id %}">Select </a><br>
+        {% else %}
+        {{ object.author }}<a>  Book Out of Stock</a><br>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+
+    <div class="card bg-light m-2 p-2">
+        <h5 class="card-title">Science Books</h5>
+        <div class="card card-body">
+        {% for object in object_list %}
+        {% if object.category == "Science" %}
+        {{ object.name }}
+        {{ object.publication }}
+        {% if object.quantity != 0 %}
+        {{ object.author }}<a href="{% url 'issuebook' object.id %}">Select </a><br>
+        {% else %}
+        {{ object.author }}<a>  Book Out of Stock</a><br>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
+</div>

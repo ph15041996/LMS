@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        Payment Date:<input type="date" name="paid_date"><br>
+        <input type="submit" value="SUBMIT">
+    </form>
+{% endblock %}
